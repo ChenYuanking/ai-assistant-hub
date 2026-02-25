@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-
 <meta charset="UTF-8">
-
-<title>我的AI助手中心</title>
+<title>AI助手中心</title>
 
 <style>
 
 body{
-
 font-family: Arial;
-
-text-align:center;
-
 background:#f5f5f5;
-
+text-align:center;
 }
 
 h1{
-
 margin-top:30px;
-
 }
 
-#chatbox{
+#chatBox{
 
 width:90%;
+max-width:600px;
 
-max-width:500px;
-
-height:300px;
+height:400px;
 
 margin:auto;
 
@@ -42,17 +34,17 @@ padding:10px;
 
 overflow:auto;
 
-text-align:left;
+border:1px solid gray;
 
 }
 
-input{
+#inputBox{
 
 width:70%;
 
 height:40px;
 
-font-size:16px;
+font-size:18px;
 
 }
 
@@ -60,9 +52,9 @@ button{
 
 height:45px;
 
-font-size:16px;
+font-size:18px;
 
-margin-top:10px;
+margin-left:10px;
 
 }
 
@@ -70,21 +62,20 @@ margin-top:10px;
 
 </head>
 
+
 <body>
 
 <h1>我的AI助手中心</h1>
 
-<div id="chatbox">
+<div id="chatBox">
 
-AI助手已启动
+<p>AI助手已启动</p >
 
 </div>
 
 <br>
 
-<input id="userInput" placeholder="输入你的问题">
-
-<br>
+<input id="inputBox" placeholder="输入内容">
 
 <button onclick="sendMessage()">
 
@@ -92,21 +83,31 @@ AI助手已启动
 
 </button>
 
+
 <script>
 
 function sendMessage(){
 
-var input = document.getElementById("userInput").value;
+var input = document.getElementById("inputBox");
 
-var chatbox = document.getElementById("chatbox");
+var chat = document.getElementById("chatBox");
 
-chatbox.innerHTML += "<br>你："+input;
+var text = input.value;
 
-chatbox.innerHTML += "<br>AI：收到你的消息";
+if(text=="") return;
+
+chat.innerHTML += "<p>你: "+text+"</p >";
+
+chat.innerHTML += "<p>AI: 我收到了：" + text + "</p >";
+
+input.value="";
+
+chat.scrollTop = chat.scrollHeight;
 
 }
 
 </script>
+
 
 </body>
 
