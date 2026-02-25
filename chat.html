@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>聊天助手</title>
+
+<style>
+
+body{
+
+font-family: Arial;
+
+background:#eeeeee;
+
+text-align:center;
+
+}
+
+h1{
+
+margin-top:30px;
+
+}
+
+#chat{
+
+width:90%;
+
+max-width:600px;
+
+height:400px;
+
+background:white;
+
+margin:auto;
+
+border-radius:10px;
+
+padding:10px;
+
+overflow:auto;
+
+border:1px solid gray;
+
+}
+
+#input{
+
+width:70%;
+
+height:40px;
+
+font-size:18px;
+
+margin-top:10px;
+
+}
+
+button{
+
+height:45px;
+
+font-size:18px;
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+<h1>聊天助手</h1>
+
+<div id="chat">
+
+<p>聊天系统已启动</p >
+
+</div>
+
+<br>
+
+<input id="input" placeholder="输入文字">
+
+<button onclick="send()">发送</button>
+
+
+
+<script>
+
+function send(){
+
+var input=document.getElementById("input");
+
+var chat=document.getElementById("chat");
+
+var text=input.value;
+
+if(text=="") return;
+
+chat.innerHTML += "<p>你："+text+"</p >";
+
+chat.innerHTML += "<p>AI：记录成功</p >";
+
+input.value="";
+
+chat.scrollTop=chat.scrollHeight;
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
