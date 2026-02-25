@@ -1,52 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
+
 <title>我的AI助手中心</title>
 
 <style>
 
 body{
+
 font-family: Arial;
+
 text-align:center;
+
 background:#f5f5f5;
+
 }
 
 h1{
-margin-top:40px;
+
+margin-top:30px;
+
 }
 
-button{
+#chatbox{
 
-width:260px;
-height:60px;
+width:90%;
 
-margin:12px;
+max-width:500px;
 
-font-size:18px;
+height:300px;
+
+margin:auto;
+
+background:white;
 
 border-radius:10px;
 
-border:none;
+padding:10px;
 
-background:#4CAF50;
+overflow:auto;
 
-color:white;
+text-align:left;
 
 }
 
 input{
 
-width:300px;
+width:70%;
+
 height:40px;
 
-font-size:18px;
+font-size:16px;
 
-text-align:center;
+}
 
-border-radius:8px;
+button{
 
-border:1px solid gray;
+height:45px;
+
+font-size:16px;
+
+margin-top:10px;
 
 }
 
@@ -56,74 +72,37 @@ border:1px solid gray;
 
 <body>
 
-<h1>AI助手中心</h1>
+<h1>我的AI助手中心</h1>
 
-<p>输入你要做的事情</p >
+<div id="chatbox">
 
-<input id="task" placeholder="比如：写报告 / 分析数据 / 聊人生">
+AI助手已启动
 
-<br><br>
-
-<button onclick="chooseAI()">
-智能选择AI
-</button>
-
-<br><br>
-
-<button onclick="window.open('https://chat.openai.com')">
-工作助手(GPT)
-</button>
+</div>
 
 <br>
 
-<button onclick="window.open('https://gemini.google.com')">
-数据助手(Gemini)
-</button>
+<input id="userInput" placeholder="输入你的问题">
 
 <br>
 
-<button onclick="window.open('https://chat.openai.com')">
-人生助手
-</button>
+<button onclick="sendMessage()">
 
-<br>
+发送
 
-<button onclick="window.open('https://chat.openai.com')">
-随便聊天
 </button>
 
 <script>
 
-function chooseAI(){
+function sendMessage(){
 
-var text=document.getElementById("task").value;
+var input = document.getElementById("userInput").value;
 
+var chatbox = document.getElementById("chatbox");
 
-if(
-text.includes("数据")||
-text.includes("分析")||
-text.includes("表格")
-){
+chatbox.innerHTML += "<br>你："+input;
 
-window.open("https://gemini.google.com");
-
-}
-
-else if(
-text.includes("人生")||
-text.includes("感情")||
-text.includes("迷茫")
-){
-
-window.open("https://chat.openai.com");
-
-}
-
-else{
-
-window.open("https://chat.openai.com");
-
-}
+chatbox.innerHTML += "<br>AI：收到你的消息";
 
 }
 
