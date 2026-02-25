@@ -5,7 +5,7 @@
 
 <meta charset="UTF-8">
 
-<title>AI助手系统 V1</title>
+<title>AI助手系统</title>
 
 <style>
 
@@ -25,45 +25,23 @@ margin-top:40px;
 
 }
 
-#chat{
+button{
 
-width:90%;
+width:250px;
 
-max-width:600px;
+height:60px;
 
-height:400px;
+margin:10px;
 
-background:white;
-
-margin:auto;
+font-size:18px;
 
 border-radius:10px;
 
-padding:10px;
+border:none;
 
-overflow:auto;
+background:#4CAF50;
 
-border:1px solid gray;
-
-}
-
-#input{
-
-width:70%;
-
-height:40px;
-
-font-size:18px;
-
-margin-top:10px;
-
-}
-
-button{
-
-height:45px;
-
-font-size:18px;
+color:white;
 
 }
 
@@ -72,49 +50,20 @@ font-size:18px;
 </head>
 
 
-
 <body>
 
 <h1>AI助手系统</h1>
 
-<div id="chat">
-
-<p>系统启动成功</p >
-
-</div>
+<p>选择助手</p >
 
 <br>
 
-<input id="input" placeholder="输入文字">
 
-<button onclick="send()">发送</button>
+<button onclick="location.href='chat.html'">
 
+统一助手入口
 
-
-<script>
-
-function send(){
-
-var input=document.getElementById("input");
-
-var chat=document.getElementById("chat");
-
-var text=input.value;
-
-if(text=="") return;
-
-chat.innerHTML += "<p>你："+text+"</p >";
-
-chat.innerHTML += "<p>AI：收到</p >";
-
-input.value="";
-
-chat.scrollTop=chat.scrollHeight;
-
-}
-
-</script>
-
+</button>
 
 
 </body>
